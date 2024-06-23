@@ -1,0 +1,851 @@
+[
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pyplot",
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "isExtraImport": true,
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
+        "label": "pyplot",
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "isExtraImport": true,
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
+        "label": "pyplot",
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "isExtraImport": true,
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pylab",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pylab",
+        "description": "matplotlib.pylab",
+        "detail": "matplotlib.pylab",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "start",
+        "kind": 2,
+        "importPath": "test01",
+        "description": "test01",
+        "peekOfCode": "def start():\n    pass\ndef get_pixel():\n    img = Image.open('2023-11-03 21.49.43.jpg')\n    # 将图像转换为RGB模式，确保它有三个通道\n    img = img.convert('RGB')\n    # 显示原始图像\n    print(\"Original Image:\")\n    img.show()\n    # 分离通道",
+        "detail": "test01",
+        "documentation": {}
+    },
+    {
+        "label": "get_pixel",
+        "kind": 2,
+        "importPath": "test01",
+        "description": "test01",
+        "peekOfCode": "def get_pixel():\n    img = Image.open('2023-11-03 21.49.43.jpg')\n    # 将图像转换为RGB模式，确保它有三个通道\n    img = img.convert('RGB')\n    # 显示原始图像\n    print(\"Original Image:\")\n    img.show()\n    # 分离通道\n    r, g, b = img.split()\n    # 显示红色通道",
+        "detail": "test01",
+        "documentation": {}
+    },
+    {
+        "label": "end",
+        "kind": 2,
+        "importPath": "test01",
+        "description": "test01",
+        "peekOfCode": "def end():\n    \"\"\"\n    Purpose:\n    \"\"\"\n# end def\nif __name__ == '__main__':\n    get_pixel()\n    print(\"nihao\")",
+        "detail": "test01",
+        "documentation": {}
+    },
+    {
+        "label": "split_color",
+        "kind": 2,
+        "importPath": "test02",
+        "description": "test02",
+        "peekOfCode": "def split_color(image_path, color, tolerance=30):\n    # 读取图片\n    img = Image.open(image_path)\n    # 将图片转换为RGB模式\n    img = img.convert('RGB')\n    # 创建遮罩\n    mask = Image.new('L', img.size, 0)\n    # 定义颜色范围\n    lower_bound = tuple((c - t for c, t in zip(color, (tolerance, tolerance, tolerance))))\n    upper_bound = tuple((c + t for c, t in zip(color, (tolerance, tolerance, tolerance))))",
+        "detail": "test02",
+        "documentation": {}
+    },
+    {
+        "label": "target_color",
+        "kind": 5,
+        "importPath": "test02",
+        "description": "test02",
+        "peekOfCode": "target_color = (255, 0, 0)  # 例如红色\ntolerance = 50  # 容差值，根据颜色的相似度调整\n# 调用函数\nsplit_color('2023-11-03 21.49.43.jpg', target_color, tolerance)",
+        "detail": "test02",
+        "documentation": {}
+    },
+    {
+        "label": "tolerance",
+        "kind": 5,
+        "importPath": "test02",
+        "description": "test02",
+        "peekOfCode": "tolerance = 50  # 容差值，根据颜色的相似度调整\n# 调用函数\nsplit_color('2023-11-03 21.49.43.jpg', target_color, tolerance)",
+        "detail": "test02",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "image = cv2.imread('yuantu.png')\n# 转换为HSV颜色空间\nhsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)\n# 定义颜色范围\n# 例如，提取红色。根据需要调整范围\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\nmask1 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "hsv_image",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)\n# 定义颜色范围\n# 例如，提取红色。根据需要调整范围\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\nmask1 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\nmask2 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\n# 合并两个掩码",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "lower_yellow",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "lower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\nmask1 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\nmask2 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\n# 合并两个掩码\nmask = mask1 + mask2\n# 使用掩码提取颜色区域\nresult = cv2.bitwise_and(image, image, mask=mask)",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "upper_yellow",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "upper_yellow = np.array([40, 255, 255])\nmask1 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\nmask2 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\n# 合并两个掩码\nmask = mask1 + mask2\n# 使用掩码提取颜色区域\nresult = cv2.bitwise_and(image, image, mask=mask)\n# 显示结果",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "mask1",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "mask1 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\nmask2 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\n# 合并两个掩码\nmask = mask1 + mask2\n# 使用掩码提取颜色区域\nresult = cv2.bitwise_and(image, image, mask=mask)\n# 显示结果\ncv2.imshow('Original Image', image)",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "lower_yellow",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "lower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\nmask2 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\n# 合并两个掩码\nmask = mask1 + mask2\n# 使用掩码提取颜色区域\nresult = cv2.bitwise_and(image, image, mask=mask)\n# 显示结果\ncv2.imshow('Original Image', image)\ncv2.imshow('Mask', mask)",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "upper_yellow",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "upper_yellow = np.array([40, 255, 255])\nmask2 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\n# 合并两个掩码\nmask = mask1 + mask2\n# 使用掩码提取颜色区域\nresult = cv2.bitwise_and(image, image, mask=mask)\n# 显示结果\ncv2.imshow('Original Image', image)\ncv2.imshow('Mask', mask)\ncv2.imshow('Extracted Color', result)",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "mask2",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "mask2 = cv2.inRange(hsv_image, lower_yellow, upper_yellow)\n# 合并两个掩码\nmask = mask1 + mask2\n# 使用掩码提取颜色区域\nresult = cv2.bitwise_and(image, image, mask=mask)\n# 显示结果\ncv2.imshow('Original Image', image)\ncv2.imshow('Mask', mask)\ncv2.imshow('Extracted Color', result)\n# 等待键盘输入并关闭窗口",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "mask",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "mask = mask1 + mask2\n# 使用掩码提取颜色区域\nresult = cv2.bitwise_and(image, image, mask=mask)\n# 显示结果\ncv2.imshow('Original Image', image)\ncv2.imshow('Mask', mask)\ncv2.imshow('Extracted Color', result)\n# 等待键盘输入并关闭窗口\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "test03",
+        "description": "test03",
+        "peekOfCode": "result = cv2.bitwise_and(image, image, mask=mask)\n# 显示结果\ncv2.imshow('Original Image', image)\ncv2.imshow('Mask', mask)\ncv2.imshow('Extracted Color', result)\n# 等待键盘输入并关闭窗口\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test03",
+        "documentation": {}
+    },
+    {
+        "label": "img",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "img = cv2.imread('2023-11-03 21.49.43.jpg')\nimg_back = cv2.imread('2023-11-03 21.49.43.jpg')\n# 日常缩放\nrows, cols, channels = img_back.shape\nimg_back = cv2.resize(img_back, None, fx=0.7, fy=0.7)\ncv2.imshow('img_back', img_back)\nrows, cols, channels = img.shape\nimg = cv2.resize(img, None, fx=0.4, fy=0.4)\ncv2.imshow('img', img)\nrows, cols, channels = img.shape  # rows，cols最后一定要是前景图片的，后面遍历图片需要用到",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "img_back",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "img_back = cv2.imread('2023-11-03 21.49.43.jpg')\n# 日常缩放\nrows, cols, channels = img_back.shape\nimg_back = cv2.resize(img_back, None, fx=0.7, fy=0.7)\ncv2.imshow('img_back', img_back)\nrows, cols, channels = img.shape\nimg = cv2.resize(img, None, fx=0.4, fy=0.4)\ncv2.imshow('img', img)\nrows, cols, channels = img.shape  # rows，cols最后一定要是前景图片的，后面遍历图片需要用到\n# 转换hsv",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "img_back",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "img_back = cv2.resize(img_back, None, fx=0.7, fy=0.7)\ncv2.imshow('img_back', img_back)\nrows, cols, channels = img.shape\nimg = cv2.resize(img, None, fx=0.4, fy=0.4)\ncv2.imshow('img', img)\nrows, cols, channels = img.shape  # rows，cols最后一定要是前景图片的，后面遍历图片需要用到\n# 转换hsv\nhsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 获取mask\nlower_blue = np.array([78, 43, 46])",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "img",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "img = cv2.resize(img, None, fx=0.4, fy=0.4)\ncv2.imshow('img', img)\nrows, cols, channels = img.shape  # rows，cols最后一定要是前景图片的，后面遍历图片需要用到\n# 转换hsv\nhsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 获取mask\nlower_blue = np.array([78, 43, 46])\nupper_blue = np.array([110, 255, 255])\nmask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "hsv",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 获取mask\nlower_blue = np.array([78, 43, 46])\nupper_blue = np.array([110, 255, 255])\nmask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)\n# 腐蚀膨胀\nerode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "lower_blue",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "lower_blue = np.array([78, 43, 46])\nupper_blue = np.array([110, 255, 255])\nmask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)\n# 腐蚀膨胀\nerode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "upper_blue",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "upper_blue = np.array([110, 255, 255])\nmask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)\n# 腐蚀膨胀\nerode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换\ncenter = [50, 50]  # 在新背景图片中的位置",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "mask",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "mask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)\n# 腐蚀膨胀\nerode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换\ncenter = [50, 50]  # 在新背景图片中的位置\nfor i in range(rows):",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "erode",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "erode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换\ncenter = [50, 50]  # 在新背景图片中的位置\nfor i in range(rows):\n    for j in range(cols):\n        if dilate[i, j] == 0:  # 0代表黑色的点\n            img_back[center[0] + i, center[1] + j] = img[i, j]  # 此处替换颜色，为BGR通道",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "dilate",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "dilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换\ncenter = [50, 50]  # 在新背景图片中的位置\nfor i in range(rows):\n    for j in range(cols):\n        if dilate[i, j] == 0:  # 0代表黑色的点\n            img_back[center[0] + i, center[1] + j] = img[i, j]  # 此处替换颜色，为BGR通道\ncv2.imshow('res', img_back)\ncv2.waitKey(0)",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "center",
+        "kind": 5,
+        "importPath": "test04",
+        "description": "test04",
+        "peekOfCode": "center = [50, 50]  # 在新背景图片中的位置\nfor i in range(rows):\n    for j in range(cols):\n        if dilate[i, j] == 0:  # 0代表黑色的点\n            img_back[center[0] + i, center[1] + j] = img[i, j]  # 此处替换颜色，为BGR通道\ncv2.imshow('res', img_back)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test04",
+        "documentation": {}
+    },
+    {
+        "label": "imgOri",
+        "kind": 5,
+        "importPath": "test05",
+        "description": "test05",
+        "peekOfCode": "imgOri = cv2.imread('2023-11-03 21.49.43.jpg')  # 读取原始图像\nheight, width, channels = imgOri.shape\n# 2. 从原始图像提取绿色通道\nimgGray = cv2.cvtColor(imgOri, cv2.COLOR_BGR2GRAY)  # 彩色图像转换为灰度图像\nimgGreen = imgOri[:, :, 1]  # imgGreen 为 绿色通道的 色彩强度图 (注意不是原图的灰度转换结果)\nprint(imgOri.shape, imgGray.shape, imgGreen.shape)\n# 3. 绿色通道转换为二值图像，生成遮罩 Mask、逆遮罩 MaskInv\n# colorThresh = 245  # 绿屏背景的颜色阈值 (注意研究阈值的影响)\n# ret, binary = cv2.threshold(imgGreen, colorThresh, 255, cv2.THRESH_BINARY)  # 转换为二值图像，生成遮罩，抠图区域黑色遮盖\n# 自适应阈值化能够根据图像不同区域亮度分布自适应地改变阈值",
+        "detail": "test05",
+        "documentation": {}
+    },
+    {
+        "label": "imgGray",
+        "kind": 5,
+        "importPath": "test05",
+        "description": "test05",
+        "peekOfCode": "imgGray = cv2.cvtColor(imgOri, cv2.COLOR_BGR2GRAY)  # 彩色图像转换为灰度图像\nimgGreen = imgOri[:, :, 1]  # imgGreen 为 绿色通道的 色彩强度图 (注意不是原图的灰度转换结果)\nprint(imgOri.shape, imgGray.shape, imgGreen.shape)\n# 3. 绿色通道转换为二值图像，生成遮罩 Mask、逆遮罩 MaskInv\n# colorThresh = 245  # 绿屏背景的颜色阈值 (注意研究阈值的影响)\n# ret, binary = cv2.threshold(imgGreen, colorThresh, 255, cv2.THRESH_BINARY)  # 转换为二值图像，生成遮罩，抠图区域黑色遮盖\n# 自适应阈值化能够根据图像不同区域亮度分布自适应地改变阈值\n# cv.adaptiveThreshold(src, maxValue, adaptiveMethod, thresholdType, blockSize, C[, dst]) -> dst\n# 参数 adaptiveMethod: ADAPTIVE_THRESH_MEAN_C(均值法), ADAPTIVE_THRESH_GAUSSIAN_C(高斯法)\n# 参数 thresholdType: THRESH_BINARY(小于阈值为0), THRESH_BINARY_INV(大于阈值为0)",
+        "detail": "test05",
+        "documentation": {}
+    },
+    {
+        "label": "imgGreen",
+        "kind": 5,
+        "importPath": "test05",
+        "description": "test05",
+        "peekOfCode": "imgGreen = imgOri[:, :, 1]  # imgGreen 为 绿色通道的 色彩强度图 (注意不是原图的灰度转换结果)\nprint(imgOri.shape, imgGray.shape, imgGreen.shape)\n# 3. 绿色通道转换为二值图像，生成遮罩 Mask、逆遮罩 MaskInv\n# colorThresh = 245  # 绿屏背景的颜色阈值 (注意研究阈值的影响)\n# ret, binary = cv2.threshold(imgGreen, colorThresh, 255, cv2.THRESH_BINARY)  # 转换为二值图像，生成遮罩，抠图区域黑色遮盖\n# 自适应阈值化能够根据图像不同区域亮度分布自适应地改变阈值\n# cv.adaptiveThreshold(src, maxValue, adaptiveMethod, thresholdType, blockSize, C[, dst]) -> dst\n# 参数 adaptiveMethod: ADAPTIVE_THRESH_MEAN_C(均值法), ADAPTIVE_THRESH_GAUSSIAN_C(高斯法)\n# 参数 thresholdType: THRESH_BINARY(小于阈值为0), THRESH_BINARY_INV(大于阈值为0)\n# 参数 blockSize: 邻域大小，正奇数",
+        "detail": "test05",
+        "documentation": {}
+    },
+    {
+        "label": "binary",
+        "kind": 5,
+        "importPath": "test05",
+        "description": "test05",
+        "peekOfCode": "binary = cv2.adaptiveThreshold(imgGreen, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 5, 0)\nbinaryInv = cv2.bitwise_not(binary)  # 按位非(黑白转置)，生成逆遮罩，抠图区域白色开窗，抠图以外区域黑色\n# 4. 用遮罩进行抠图和更换背景\n# 生成抠图图像 (前景保留，背景黑色)\nimgMatte = cv2.bitwise_and(imgOri, imgOri, mask=binaryInv)  # 生成抠图前景，标准抠图以外的逆遮罩区域输出黑色\n# 将背景颜色更换为红色: 修改逆遮罩 (抠图以外区域黑色)\nimgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]  # 黑色区域(0/0/0)修改为红色(BGR:0/0/255)\nplt.figure(figsize=(12, 8))\nplt.subplot(231), plt.imshow(cv2.cvtColor(imgOri, cv2.COLOR_BGR2RGB)), plt.title(\"Origin image\"), plt.axis('off')",
+        "detail": "test05",
+        "documentation": {}
+    },
+    {
+        "label": "binaryInv",
+        "kind": 5,
+        "importPath": "test05",
+        "description": "test05",
+        "peekOfCode": "binaryInv = cv2.bitwise_not(binary)  # 按位非(黑白转置)，生成逆遮罩，抠图区域白色开窗，抠图以外区域黑色\n# 4. 用遮罩进行抠图和更换背景\n# 生成抠图图像 (前景保留，背景黑色)\nimgMatte = cv2.bitwise_and(imgOri, imgOri, mask=binaryInv)  # 生成抠图前景，标准抠图以外的逆遮罩区域输出黑色\n# 将背景颜色更换为红色: 修改逆遮罩 (抠图以外区域黑色)\nimgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]  # 黑色区域(0/0/0)修改为红色(BGR:0/0/255)\nplt.figure(figsize=(12, 8))\nplt.subplot(231), plt.imshow(cv2.cvtColor(imgOri, cv2.COLOR_BGR2RGB)), plt.title(\"Origin image\"), plt.axis('off')\nplt.subplot(232), plt.imshow(imgGray, cmap='gray'), plt.title(\"Gray image\"), plt.axis('off')",
+        "detail": "test05",
+        "documentation": {}
+    },
+    {
+        "label": "imgMatte",
+        "kind": 5,
+        "importPath": "test05",
+        "description": "test05",
+        "peekOfCode": "imgMatte = cv2.bitwise_and(imgOri, imgOri, mask=binaryInv)  # 生成抠图前景，标准抠图以外的逆遮罩区域输出黑色\n# 将背景颜色更换为红色: 修改逆遮罩 (抠图以外区域黑色)\nimgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]  # 黑色区域(0/0/0)修改为红色(BGR:0/0/255)\nplt.figure(figsize=(12, 8))\nplt.subplot(231), plt.imshow(cv2.cvtColor(imgOri, cv2.COLOR_BGR2RGB)), plt.title(\"Origin image\"), plt.axis('off')\nplt.subplot(232), plt.imshow(imgGray, cmap='gray'), plt.title(\"Gray image\"), plt.axis('off')\nplt.subplot(233), plt.imshow(imgGreen, cmap='gray'), plt.title(\"Green channel level\"), plt.axis('off')\nplt.subplot(234), plt.imshow(binary, cmap='gray'), plt.title(\"binary mask\"), plt.axis('off')\nplt.subplot(235), plt.imshow(binaryInv, cmap='gray'), plt.title(\"inv-binary mask\"), plt.axis('off')",
+        "detail": "test05",
+        "documentation": {}
+    },
+    {
+        "label": "imgReplace",
+        "kind": 5,
+        "importPath": "test05",
+        "description": "test05",
+        "peekOfCode": "imgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]  # 黑色区域(0/0/0)修改为红色(BGR:0/0/255)\nplt.figure(figsize=(12, 8))\nplt.subplot(231), plt.imshow(cv2.cvtColor(imgOri, cv2.COLOR_BGR2RGB)), plt.title(\"Origin image\"), plt.axis('off')\nplt.subplot(232), plt.imshow(imgGray, cmap='gray'), plt.title(\"Gray image\"), plt.axis('off')\nplt.subplot(233), plt.imshow(imgGreen, cmap='gray'), plt.title(\"Green channel level\"), plt.axis('off')\nplt.subplot(234), plt.imshow(binary, cmap='gray'), plt.title(\"binary mask\"), plt.axis('off')\nplt.subplot(235), plt.imshow(binaryInv, cmap='gray'), plt.title(\"inv-binary mask\"), plt.axis('off')\nplt.subplot(236), plt.imshow(cv2.cvtColor(imgReplace, cv2.COLOR_BGR2RGB)), plt.title(\"BgColor changed\"), plt.axis('off')\nplt.tight_layout()",
+        "detail": "test05",
+        "documentation": {}
+    },
+    {
+        "label": "imgOri",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "imgOri = cv2.imread('2023-11-03 21.49.43.jpg')  # 读取原始图像\nheight, width, channels = imgOri.shape\n# 2. 从原始图像提取绿色通道\nimgGray = cv2.cvtColor(imgOri, cv2.COLOR_BGR2GRAY)  # 彩色图像转换为灰度图像\nimgGreen = imgOri[:, :, 1]\nprint(imgOri.shape, imgGray.shape, imgGreen.shape)\n# 3. 转换到 HSV 空间，对背景颜色范围进行阈值处理，生成遮罩 Mask、逆遮罩 MaskInv\n# 使用 cv.nrange 函数在 HSV 空间检查设定的颜色区域范围，转换为二值图像，生成遮罩\n# cv.inRange(src, lowerb, upperb[, dst]    ) -> dst\n# inRange(frame,Scalar(low_b,low_g,low_r), Scalar(high_b,high_g,high_r))",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "imgGray",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "imgGray = cv2.cvtColor(imgOri, cv2.COLOR_BGR2GRAY)  # 彩色图像转换为灰度图像\nimgGreen = imgOri[:, :, 1]\nprint(imgOri.shape, imgGray.shape, imgGreen.shape)\n# 3. 转换到 HSV 空间，对背景颜色范围进行阈值处理，生成遮罩 Mask、逆遮罩 MaskInv\n# 使用 cv.nrange 函数在 HSV 空间检查设定的颜色区域范围，转换为二值图像，生成遮罩\n# cv.inRange(src, lowerb, upperb[, dst]    ) -> dst\n# inRange(frame,Scalar(low_b,low_g,low_r), Scalar(high_b,high_g,high_r))\nhsv = cv2.cvtColor(imgOri, cv2.COLOR_BGR2HSV)  # 将图片转换到 HSV 色彩空间\nlowerColor = np.array([35, 43, 46])  # (下限: 绿色33/43/46,红色156/43/46,蓝色100/43/46)\nupperColor = np.array([77, 255, 255])  # (上限: 绿色77/255/255,红色180/255/255,蓝色124/255/255)",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "imgGreen",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "imgGreen = imgOri[:, :, 1]\nprint(imgOri.shape, imgGray.shape, imgGreen.shape)\n# 3. 转换到 HSV 空间，对背景颜色范围进行阈值处理，生成遮罩 Mask、逆遮罩 MaskInv\n# 使用 cv.nrange 函数在 HSV 空间检查设定的颜色区域范围，转换为二值图像，生成遮罩\n# cv.inRange(src, lowerb, upperb[, dst]    ) -> dst\n# inRange(frame,Scalar(low_b,low_g,low_r), Scalar(high_b,high_g,high_r))\nhsv = cv2.cvtColor(imgOri, cv2.COLOR_BGR2HSV)  # 将图片转换到 HSV 色彩空间\nlowerColor = np.array([35, 43, 46])  # (下限: 绿色33/43/46,红色156/43/46,蓝色100/43/46)\nupperColor = np.array([77, 255, 255])  # (上限: 绿色77/255/255,红色180/255/255,蓝色124/255/255)\nbinary = cv2.inRange(hsv, lowerColor, upperColor)",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "hsv",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "hsv = cv2.cvtColor(imgOri, cv2.COLOR_BGR2HSV)  # 将图片转换到 HSV 色彩空间\nlowerColor = np.array([35, 43, 46])  # (下限: 绿色33/43/46,红色156/43/46,蓝色100/43/46)\nupperColor = np.array([77, 255, 255])  # (上限: 绿色77/255/255,红色180/255/255,蓝色124/255/255)\nbinary = cv2.inRange(hsv, lowerColor, upperColor)\nbinaryInv = cv2.bitwise_not(binary)\n# 4. 用遮罩进行抠图和更换背景\n# 生成抠图图像 (前景保留，背景黑色)\nimgMatte = cv2.bitwise_and(imgOri, imgOri, mask=binaryInv)  # 生成抠图前景，标准抠图以外的逆遮罩区域输出黑色\nimgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "lowerColor",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "lowerColor = np.array([35, 43, 46])  # (下限: 绿色33/43/46,红色156/43/46,蓝色100/43/46)\nupperColor = np.array([77, 255, 255])  # (上限: 绿色77/255/255,红色180/255/255,蓝色124/255/255)\nbinary = cv2.inRange(hsv, lowerColor, upperColor)\nbinaryInv = cv2.bitwise_not(binary)\n# 4. 用遮罩进行抠图和更换背景\n# 生成抠图图像 (前景保留，背景黑色)\nimgMatte = cv2.bitwise_and(imgOri, imgOri, mask=binaryInv)  # 生成抠图前景，标准抠图以外的逆遮罩区域输出黑色\nimgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]\nplt.figure(figsize=(12, 8))",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "upperColor",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "upperColor = np.array([77, 255, 255])  # (上限: 绿色77/255/255,红色180/255/255,蓝色124/255/255)\nbinary = cv2.inRange(hsv, lowerColor, upperColor)\nbinaryInv = cv2.bitwise_not(binary)\n# 4. 用遮罩进行抠图和更换背景\n# 生成抠图图像 (前景保留，背景黑色)\nimgMatte = cv2.bitwise_and(imgOri, imgOri, mask=binaryInv)  # 生成抠图前景，标准抠图以外的逆遮罩区域输出黑色\nimgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]\nplt.figure(figsize=(12, 8))\nplt.subplot(231), plt.imshow(cv2.cvtColor(imgOri, cv2.COLOR_BGR2RGB)), plt.title(\"Origin image\"), plt.axis('off')",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "binary",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "binary = cv2.inRange(hsv, lowerColor, upperColor)\nbinaryInv = cv2.bitwise_not(binary)\n# 4. 用遮罩进行抠图和更换背景\n# 生成抠图图像 (前景保留，背景黑色)\nimgMatte = cv2.bitwise_and(imgOri, imgOri, mask=binaryInv)  # 生成抠图前景，标准抠图以外的逆遮罩区域输出黑色\nimgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]\nplt.figure(figsize=(12, 8))\nplt.subplot(231), plt.imshow(cv2.cvtColor(imgOri, cv2.COLOR_BGR2RGB)), plt.title(\"Origin image\"), plt.axis('off')\nplt.subplot(232), plt.imshow(imgGray, cmap='gray'), plt.title(\"Gray image\"), plt.axis('off')",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "binaryInv",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "binaryInv = cv2.bitwise_not(binary)\n# 4. 用遮罩进行抠图和更换背景\n# 生成抠图图像 (前景保留，背景黑色)\nimgMatte = cv2.bitwise_and(imgOri, imgOri, mask=binaryInv)  # 生成抠图前景，标准抠图以外的逆遮罩区域输出黑色\nimgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]\nplt.figure(figsize=(12, 8))\nplt.subplot(231), plt.imshow(cv2.cvtColor(imgOri, cv2.COLOR_BGR2RGB)), plt.title(\"Origin image\"), plt.axis('off')\nplt.subplot(232), plt.imshow(imgGray, cmap='gray'), plt.title(\"Gray image\"), plt.axis('off')\nplt.subplot(233), plt.imshow(imgGreen, cmap='gray'), plt.title(\"Green channel level\"), plt.axis('off')",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "imgMatte",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "imgMatte = cv2.bitwise_and(imgOri, imgOri, mask=binaryInv)  # 生成抠图前景，标准抠图以外的逆遮罩区域输出黑色\nimgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]\nplt.figure(figsize=(12, 8))\nplt.subplot(231), plt.imshow(cv2.cvtColor(imgOri, cv2.COLOR_BGR2RGB)), plt.title(\"Origin image\"), plt.axis('off')\nplt.subplot(232), plt.imshow(imgGray, cmap='gray'), plt.title(\"Gray image\"), plt.axis('off')\nplt.subplot(233), plt.imshow(imgGreen, cmap='gray'), plt.title(\"Green channel level\"), plt.axis('off')\n# plt.subplot(234), plt.imshow(binary, cmap='gray'), plt.title(\"binary mask\"), plt.axis('off')\nplt.subplot(234), plt.imshow(binaryInv, cmap='gray'), plt.title(\"inv-binary mask\"), plt.axis('off')\nplt.subplot(235), plt.imshow(cv2.cvtColor(imgMatte, cv2.COLOR_BGR2RGB)), plt.title(\"Matting Image\"), plt.axis('off')",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "imgReplace",
+        "kind": 5,
+        "importPath": "test06",
+        "description": "test06",
+        "peekOfCode": "imgReplace = imgOri.copy()\nimgReplace[binaryInv == 0] = [0, 0, 255]\nplt.figure(figsize=(12, 8))\nplt.subplot(231), plt.imshow(cv2.cvtColor(imgOri, cv2.COLOR_BGR2RGB)), plt.title(\"Origin image\"), plt.axis('off')\nplt.subplot(232), plt.imshow(imgGray, cmap='gray'), plt.title(\"Gray image\"), plt.axis('off')\nplt.subplot(233), plt.imshow(imgGreen, cmap='gray'), plt.title(\"Green channel level\"), plt.axis('off')\n# plt.subplot(234), plt.imshow(binary, cmap='gray'), plt.title(\"binary mask\"), plt.axis('off')\nplt.subplot(234), plt.imshow(binaryInv, cmap='gray'), plt.title(\"inv-binary mask\"), plt.axis('off')\nplt.subplot(235), plt.imshow(cv2.cvtColor(imgMatte, cv2.COLOR_BGR2RGB)), plt.title(\"Matting Image\"), plt.axis('off')\nplt.subplot(236), plt.imshow(cv2.cvtColor(imgReplace, cv2.COLOR_BGR2RGB)), plt.title(\"BgColor changed\"), plt.axis('off')",
+        "detail": "test06",
+        "documentation": {}
+    },
+    {
+        "label": "img",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "img = cv2.imread('2023-11-03 21.49.43.jpg')\nimg_back = cv2.imread('2023-11-03 21.49.43.jpg')\n# 日常缩放\nrows, cols, channels = img_back.shape\nimg_back = cv2.resize(img_back, None, fx=0.7, fy=0.7)\ncv2.imshow('img_back', img_back)\nrows, cols, channels = img.shape\nimg = cv2.resize(img, None, fx=0.4, fy=0.4)\ncv2.imshow('img', img)\nrows, cols, channels = img.shape  # rows，cols最后一定要是前景图片的，后面遍历图片需要用到",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "img_back",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "img_back = cv2.imread('2023-11-03 21.49.43.jpg')\n# 日常缩放\nrows, cols, channels = img_back.shape\nimg_back = cv2.resize(img_back, None, fx=0.7, fy=0.7)\ncv2.imshow('img_back', img_back)\nrows, cols, channels = img.shape\nimg = cv2.resize(img, None, fx=0.4, fy=0.4)\ncv2.imshow('img', img)\nrows, cols, channels = img.shape  # rows，cols最后一定要是前景图片的，后面遍历图片需要用到\n# 转换hsv",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "img_back",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "img_back = cv2.resize(img_back, None, fx=0.7, fy=0.7)\ncv2.imshow('img_back', img_back)\nrows, cols, channels = img.shape\nimg = cv2.resize(img, None, fx=0.4, fy=0.4)\ncv2.imshow('img', img)\nrows, cols, channels = img.shape  # rows，cols最后一定要是前景图片的，后面遍历图片需要用到\n# 转换hsv\nhsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 获取mask\nlower_blue = np.array([78, 43, 46])",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "img",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "img = cv2.resize(img, None, fx=0.4, fy=0.4)\ncv2.imshow('img', img)\nrows, cols, channels = img.shape  # rows，cols最后一定要是前景图片的，后面遍历图片需要用到\n# 转换hsv\nhsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 获取mask\nlower_blue = np.array([78, 43, 46])\nupper_blue = np.array([110, 255, 255])\nmask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "hsv",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 获取mask\nlower_blue = np.array([78, 43, 46])\nupper_blue = np.array([110, 255, 255])\nmask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)\n# 腐蚀膨胀\nerode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "lower_blue",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "lower_blue = np.array([78, 43, 46])\nupper_blue = np.array([110, 255, 255])\nmask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)\n# 腐蚀膨胀\nerode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "upper_blue",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "upper_blue = np.array([110, 255, 255])\nmask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)\n# 腐蚀膨胀\nerode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换\ncenter = [50, 50]  # 在新背景图片中的位置",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "mask",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "mask = cv2.inRange(hsv, lower_blue, upper_blue)\ncv2.imshow('Mask', mask)\n# 腐蚀膨胀\nerode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换\ncenter = [50, 50]  # 在新背景图片中的位置\nfor i in range(rows):",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "erode",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "erode = cv2.erode(mask, None, iterations=1)\ncv2.imshow('erode', erode)\ndilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换\ncenter = [50, 50]  # 在新背景图片中的位置\nfor i in range(rows):\n    for j in range(cols):\n        if dilate[i, j] == 0:  # 0代表黑色的点\n            img_back[center[0] + i, center[1] + j] = img[i, j]  # 此处替换颜色，为BGR通道",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "dilate",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "dilate = cv2.dilate(erode, None, iterations=1)\ncv2.imshow('dilate', dilate)\n# 遍历替换\ncenter = [50, 50]  # 在新背景图片中的位置\nfor i in range(rows):\n    for j in range(cols):\n        if dilate[i, j] == 0:  # 0代表黑色的点\n            img_back[center[0] + i, center[1] + j] = img[i, j]  # 此处替换颜色，为BGR通道\ncv2.imshow('res', img_back)\ncv2.waitKey(0)",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "center",
+        "kind": 5,
+        "importPath": "test07",
+        "description": "test07",
+        "peekOfCode": "center = [50, 50]  # 在新背景图片中的位置\nfor i in range(rows):\n    for j in range(cols):\n        if dilate[i, j] == 0:  # 0代表黑色的点\n            img_back[center[0] + i, center[1] + j] = img[i, j]  # 此处替换颜色，为BGR通道\ncv2.imshow('res', img_back)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test07",
+        "documentation": {}
+    },
+    {
+        "label": "img1",
+        "kind": 5,
+        "importPath": "test08",
+        "description": "test08",
+        "peekOfCode": "img1 = cv.imread('2023-11-03 21.46.26.jpg')\nimg2 = cv.imread('root.png')\n# 我希望把 LOGO 防止到左上角，所以创建了一个区域（roi)\nrows, cols, channels = img2.shape\nroi = img1[0:rows, 0:cols]\n# 将 LOGO 图转换为灰度图，阈值为 10， 最大值为 255\nimg2gray = cv.cvtColor(img2, cv.COLOR_BGR2GRAY)\nret, mask = cv.threshold(img2gray, 10, 255, cv.THRESH_BINARY)\nmask_inv = cv.bitwise_not(mask)\n# 现在将 ROI 抠出黑色区域",
+        "detail": "test08",
+        "documentation": {}
+    },
+    {
+        "label": "img2",
+        "kind": 5,
+        "importPath": "test08",
+        "description": "test08",
+        "peekOfCode": "img2 = cv.imread('root.png')\n# 我希望把 LOGO 防止到左上角，所以创建了一个区域（roi)\nrows, cols, channels = img2.shape\nroi = img1[0:rows, 0:cols]\n# 将 LOGO 图转换为灰度图，阈值为 10， 最大值为 255\nimg2gray = cv.cvtColor(img2, cv.COLOR_BGR2GRAY)\nret, mask = cv.threshold(img2gray, 10, 255, cv.THRESH_BINARY)\nmask_inv = cv.bitwise_not(mask)\n# 现在将 ROI 抠出黑色区域\nimg1_bg = cv.bitwise_and(roi, roi, mask=mask_inv)",
+        "detail": "test08",
+        "documentation": {}
+    },
+    {
+        "label": "roi",
+        "kind": 5,
+        "importPath": "test08",
+        "description": "test08",
+        "peekOfCode": "roi = img1[0:rows, 0:cols]\n# 将 LOGO 图转换为灰度图，阈值为 10， 最大值为 255\nimg2gray = cv.cvtColor(img2, cv.COLOR_BGR2GRAY)\nret, mask = cv.threshold(img2gray, 10, 255, cv.THRESH_BINARY)\nmask_inv = cv.bitwise_not(mask)\n# 现在将 ROI 抠出黑色区域\nimg1_bg = cv.bitwise_and(roi, roi, mask=mask_inv)\n# 抠出 LOGO 图像\nimg2_fg = cv.bitwise_and(img2, img2, mask=mask)\n# 将抠出的 LOGO 防入 ROI 区域中",
+        "detail": "test08",
+        "documentation": {}
+    },
+    {
+        "label": "img2gray",
+        "kind": 5,
+        "importPath": "test08",
+        "description": "test08",
+        "peekOfCode": "img2gray = cv.cvtColor(img2, cv.COLOR_BGR2GRAY)\nret, mask = cv.threshold(img2gray, 10, 255, cv.THRESH_BINARY)\nmask_inv = cv.bitwise_not(mask)\n# 现在将 ROI 抠出黑色区域\nimg1_bg = cv.bitwise_and(roi, roi, mask=mask_inv)\n# 抠出 LOGO 图像\nimg2_fg = cv.bitwise_and(img2, img2, mask=mask)\n# 将抠出的 LOGO 防入 ROI 区域中\ndst = cv.add(img1_bg, img2_fg)\nimg1[0:rows, 0:cols] = dst",
+        "detail": "test08",
+        "documentation": {}
+    },
+    {
+        "label": "mask_inv",
+        "kind": 5,
+        "importPath": "test08",
+        "description": "test08",
+        "peekOfCode": "mask_inv = cv.bitwise_not(mask)\n# 现在将 ROI 抠出黑色区域\nimg1_bg = cv.bitwise_and(roi, roi, mask=mask_inv)\n# 抠出 LOGO 图像\nimg2_fg = cv.bitwise_and(img2, img2, mask=mask)\n# 将抠出的 LOGO 防入 ROI 区域中\ndst = cv.add(img1_bg, img2_fg)\nimg1[0:rows, 0:cols] = dst\n# 显示图像\ncv.imshow('res', img1)",
+        "detail": "test08",
+        "documentation": {}
+    },
+    {
+        "label": "img1_bg",
+        "kind": 5,
+        "importPath": "test08",
+        "description": "test08",
+        "peekOfCode": "img1_bg = cv.bitwise_and(roi, roi, mask=mask_inv)\n# 抠出 LOGO 图像\nimg2_fg = cv.bitwise_and(img2, img2, mask=mask)\n# 将抠出的 LOGO 防入 ROI 区域中\ndst = cv.add(img1_bg, img2_fg)\nimg1[0:rows, 0:cols] = dst\n# 显示图像\ncv.imshow('res', img1)\n# 退出，并释放资源\ncv.waitKey(0)",
+        "detail": "test08",
+        "documentation": {}
+    },
+    {
+        "label": "img2_fg",
+        "kind": 5,
+        "importPath": "test08",
+        "description": "test08",
+        "peekOfCode": "img2_fg = cv.bitwise_and(img2, img2, mask=mask)\n# 将抠出的 LOGO 防入 ROI 区域中\ndst = cv.add(img1_bg, img2_fg)\nimg1[0:rows, 0:cols] = dst\n# 显示图像\ncv.imshow('res', img1)\n# 退出，并释放资源\ncv.waitKey(0)\ncv.destroyAllWindows()",
+        "detail": "test08",
+        "documentation": {}
+    },
+    {
+        "label": "dst",
+        "kind": 5,
+        "importPath": "test08",
+        "description": "test08",
+        "peekOfCode": "dst = cv.add(img1_bg, img2_fg)\nimg1[0:rows, 0:cols] = dst\n# 显示图像\ncv.imshow('res', img1)\n# 退出，并释放资源\ncv.waitKey(0)\ncv.destroyAllWindows()",
+        "detail": "test08",
+        "documentation": {}
+    },
+    {
+        "label": "img",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "img = cv2.imread(\"yuantu.png\")\n# 转换颜色空间\nhsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 定义绿色范围\nlower_green = np.array([40, 50, 50])\nupper_green = np.array([90, 255, 255])\n# 定义黄色范围\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\n# 根据颜色范围创建掩码",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "hsv",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 定义绿色范围\nlower_green = np.array([40, 50, 50])\nupper_green = np.array([90, 255, 255])\n# 定义黄色范围\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\n# 根据颜色范围创建掩码\nmask_green = cv2.inRange(hsv, lower_green, upper_green)\nmask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "lower_green",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "lower_green = np.array([40, 50, 50])\nupper_green = np.array([90, 255, 255])\n# 定义黄色范围\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\n# 根据颜色范围创建掩码\nmask_green = cv2.inRange(hsv, lower_green, upper_green)\nmask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)\n# 合并掩码\nmask = cv2.bitwise_or(mask_green, mask_yellow)",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "upper_green",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "upper_green = np.array([90, 255, 255])\n# 定义黄色范围\nlower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\n# 根据颜色范围创建掩码\nmask_green = cv2.inRange(hsv, lower_green, upper_green)\nmask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)\n# 合并掩码\nmask = cv2.bitwise_or(mask_green, mask_yellow)\n# 应用掩码",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "lower_yellow",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "lower_yellow = np.array([15, 50, 50])\nupper_yellow = np.array([40, 255, 255])\n# 根据颜色范围创建掩码\nmask_green = cv2.inRange(hsv, lower_green, upper_green)\nmask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)\n# 合并掩码\nmask = cv2.bitwise_or(mask_green, mask_yellow)\n# 应用掩码\nresult = cv2.bitwise_and(img, img, mask=mask)\n# 显示结果",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "upper_yellow",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "upper_yellow = np.array([40, 255, 255])\n# 根据颜色范围创建掩码\nmask_green = cv2.inRange(hsv, lower_green, upper_green)\nmask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)\n# 合并掩码\nmask = cv2.bitwise_or(mask_green, mask_yellow)\n# 应用掩码\nresult = cv2.bitwise_and(img, img, mask=mask)\n# 显示结果\ncv2.imshow('result', result)",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "mask_green",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "mask_green = cv2.inRange(hsv, lower_green, upper_green)\nmask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)\n# 合并掩码\nmask = cv2.bitwise_or(mask_green, mask_yellow)\n# 应用掩码\nresult = cv2.bitwise_and(img, img, mask=mask)\n# 显示结果\ncv2.imshow('result', result)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "mask_yellow",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "mask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)\n# 合并掩码\nmask = cv2.bitwise_or(mask_green, mask_yellow)\n# 应用掩码\nresult = cv2.bitwise_and(img, img, mask=mask)\n# 显示结果\ncv2.imshow('result', result)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "mask",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "mask = cv2.bitwise_or(mask_green, mask_yellow)\n# 应用掩码\nresult = cv2.bitwise_and(img, img, mask=mask)\n# 显示结果\ncv2.imshow('result', result)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "test09",
+        "description": "test09",
+        "peekOfCode": "result = cv2.bitwise_and(img, img, mask=mask)\n# 显示结果\ncv2.imshow('result', result)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test09",
+        "documentation": {}
+    },
+    {
+        "label": "split_color",
+        "kind": 2,
+        "importPath": "test10",
+        "description": "test10",
+        "peekOfCode": "def split_color(img_name, lower_color, upper_color, save_count):\n    # 读入图片\n    img = cv2.imread(img_name)\n    # 获取图片尺寸\n    height, width = img.shape[:2]\n    # 转换颜色空间\n    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n    # 根据颜色范围创建掩码\n    mask = cv2.inRange(hsv, lower_color, upper_color)\n    # 图片去噪 闭运算",
+        "detail": "test10",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "kind": 5,
+        "importPath": "test11",
+        "description": "test11",
+        "peekOfCode": "image = cv2.imread('yuantu.png')\n# 确定图像的尺寸\nheight, width, channels = image.shape\n# 创建一个白色背景的遮罩，大小与图像一致\n# mask = np.ones((height, width, channels), dtype='uint8') * 255\nmask = np.ones((height, width, channels), dtype='uint8') * 0\n# 应用遮罩到图像上，这里使用位与操作\n# 这将只保留原始图像中非白色（即有实际内容的部分）\nmasked_image = cv2.bitwise_and(image, mask)\n# masked_image = cv2.bitwise_or(image, mask)",
+        "detail": "test11",
+        "documentation": {}
+    },
+    {
+        "label": "mask",
+        "kind": 5,
+        "importPath": "test11",
+        "description": "test11",
+        "peekOfCode": "mask = np.ones((height, width, channels), dtype='uint8') * 0\n# 应用遮罩到图像上，这里使用位与操作\n# 这将只保留原始图像中非白色（即有实际内容的部分）\nmasked_image = cv2.bitwise_and(image, mask)\n# masked_image = cv2.bitwise_or(image, mask)\n# 显示原始图像和遮罩后的图像\ncv2.imshow('Original Image', image)\ncv2.imshow('Masked Image', masked_image)\n# 保存结果\ncv2.imwrite('path_to_save_masked_image.jpg', masked_image)",
+        "detail": "test11",
+        "documentation": {}
+    },
+    {
+        "label": "masked_image",
+        "kind": 5,
+        "importPath": "test11",
+        "description": "test11",
+        "peekOfCode": "masked_image = cv2.bitwise_and(image, mask)\n# masked_image = cv2.bitwise_or(image, mask)\n# 显示原始图像和遮罩后的图像\ncv2.imshow('Original Image', image)\ncv2.imshow('Masked Image', masked_image)\n# 保存结果\ncv2.imwrite('path_to_save_masked_image.jpg', masked_image)\n# 等待按键，然后关闭所有窗口\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test11",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "kind": 5,
+        "importPath": "test12",
+        "description": "test12",
+        "peekOfCode": "image = cv2.imread('path_to_save_masked_image.jpg')\nheight, width, channels = image.shape\n# 转换到HSV颜色空间\nhsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)\n# 将V通道（亮度）中的最小值替换为最大值，实现背景变白\nhsv_image[..., 2][hsv_image[..., 2] == 0] = 255\n# 转换回BGR颜色空间\nwhite_background_image = cv2.cvtColor(hsv_image, cv2.COLOR_HSV2BGR)\n# 保存或显示结果\ncv2.imwrite('white_background_image.jpg', white_background_image)",
+        "detail": "test12",
+        "documentation": {}
+    },
+    {
+        "label": "hsv_image",
+        "kind": 5,
+        "importPath": "test12",
+        "description": "test12",
+        "peekOfCode": "hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)\n# 将V通道（亮度）中的最小值替换为最大值，实现背景变白\nhsv_image[..., 2][hsv_image[..., 2] == 0] = 255\n# 转换回BGR颜色空间\nwhite_background_image = cv2.cvtColor(hsv_image, cv2.COLOR_HSV2BGR)\n# 保存或显示结果\ncv2.imwrite('white_background_image.jpg', white_background_image)\ncv2.imshow('White Background Image', white_background_image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test12",
+        "documentation": {}
+    },
+    {
+        "label": "white_background_image",
+        "kind": 5,
+        "importPath": "test12",
+        "description": "test12",
+        "peekOfCode": "white_background_image = cv2.cvtColor(hsv_image, cv2.COLOR_HSV2BGR)\n# 保存或显示结果\ncv2.imwrite('white_background_image.jpg', white_background_image)\ncv2.imshow('White Background Image', white_background_image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "test12",
+        "documentation": {}
+    },
+    {
+        "label": "img",
+        "kind": 5,
+        "importPath": "test13",
+        "description": "test13",
+        "peekOfCode": "img = cv2.imread(\"yuantu.png\")\n# BGR图转为HSV\nhsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 提取hsv中H通道数据\nh = hsv[:, :, 0].ravel()\n# 直方图显示\nplt.hist(h, 180, [0, 180])\nplt.show()",
+        "detail": "test13",
+        "documentation": {}
+    },
+    {
+        "label": "hsv",
+        "kind": 5,
+        "importPath": "test13",
+        "description": "test13",
+        "peekOfCode": "hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)\n# 提取hsv中H通道数据\nh = hsv[:, :, 0].ravel()\n# 直方图显示\nplt.hist(h, 180, [0, 180])\nplt.show()",
+        "detail": "test13",
+        "documentation": {}
+    },
+    {
+        "label": "h",
+        "kind": 5,
+        "importPath": "test13",
+        "description": "test13",
+        "peekOfCode": "h = hsv[:, :, 0].ravel()\n# 直方图显示\nplt.hist(h, 180, [0, 180])\nplt.show()",
+        "detail": "test13",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "kind": 5,
+        "importPath": "test15",
+        "description": "test15",
+        "peekOfCode": "path = r\"yuantu.png\"\nimage = Image.open(path).convert(\"RGB\")\nplt.imshow(image)\nplt.xticks([])  # 去掉x轴\nplt.yticks([])  # 去掉y轴\nplt.axis('off')  # 去掉坐标轴\nplt.savefig(r\"a.eps\", format='eps', dpi=600)",
+        "detail": "test15",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "kind": 5,
+        "importPath": "test15",
+        "description": "test15",
+        "peekOfCode": "image = Image.open(path).convert(\"RGB\")\nplt.imshow(image)\nplt.xticks([])  # 去掉x轴\nplt.yticks([])  # 去掉y轴\nplt.axis('off')  # 去掉坐标轴\nplt.savefig(r\"a.eps\", format='eps', dpi=600)",
+        "detail": "test15",
+        "documentation": {}
+    }
+]
